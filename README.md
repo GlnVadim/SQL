@@ -1,3 +1,6 @@
 # SQL
 SQL Test
-StrataScratch - Analytical Questions <img width="275" height="19" alt="image" src="https://github.com/user-attachments/assets/6e0e8c80-64ef-4d77-b9de-8f09537db5a7" />
+Links to the web:
+ - [StrataScratch - Analytical](https://platform.stratascratch.com/)
+ - [SQL for Data Analysis: Tutorial Introduction - Mode](https://mode.com/sql-tutorial/introduction-to-sql)
+
