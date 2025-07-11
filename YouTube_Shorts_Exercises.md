@@ -36,3 +36,39 @@ WHERE
   RankUp = 1
   OR RankDown = 1
 ```
+# LinkedIn SQL Interview Question - Data Science Skills
+Source: [LinkedIn SQL Interview Question | DataLemur](https://datalemur.com/questions/matching-skills)
+``` SQL
+SELECT
+  candidate_id,
+  SUM(PythonSkill) AS PythonSkill,
+  SUM(TableauSkill) AS TableauSkill,
+  SUM(PostgreSQLSkill) AS PostgreSQLSkill
+FROM
+  (SELECT 
+    skill, 
+    candidate_id,
+    CASE 
+      WHEN skill = 'Python' THEN  1 
+      ELSE 0 
+    END AS PythonSkill,
+    CASE 
+      WHEN skill = 'Tableau' THEN  1 
+      ELSE 0 
+    END AS TableauSkill,
+    CASE 
+      WHEN skill = 'PostgreSQL' THEN  1 
+      ELSE 0 
+    END AS PostgreSQLSkill
+  FROM 
+    candidates
+  WHERE
+    skill IN ('Python', 'Tableau', 'PostgreSQL')) AS subq
+GROUP BY
+  candidate_id
+HAVING
+  PythonSkill = 1 
+  AND TableauSkill = 1 
+  AND PostgreSQLSkill = 1
+  
+```
